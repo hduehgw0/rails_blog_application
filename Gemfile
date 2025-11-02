@@ -17,9 +17,9 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 # Use Sass to process CSS [https://github.com/rails/dartsass-rails]
-gem 'dartsass-rails'
+gem "dartsass-rails"
 # Use Bootstrap CSS framework [https://getbootstrap.com/]
-gem 'bootstrap', '~> 5.3.3'
+gem "bootstrap", "~> 5.3.3"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
