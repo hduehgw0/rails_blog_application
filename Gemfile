@@ -20,7 +20,10 @@ gem "jbuilder"
 gem "dartsass-rails"
 # Use Bootstrap CSS framework [https://getbootstrap.com/]
 gem "bootstrap", "~> 5.3.3"
-
+# User authentication solution for Rails [https://github.com/heartcombo/devise]
+gem "devise"
+# Pagination library [https://github.com/DavidKuseh/pagy]
+gem "pagy"
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
 
@@ -53,6 +56,9 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  # Letter opener for previewing emails in the browser [https://github.com/heartcombo/letter_opener_web]
+  gem "letter_opener_web"
 end
 
 group :development do
