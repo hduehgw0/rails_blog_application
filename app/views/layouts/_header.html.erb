@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+
+    <%# 4.1, 4.6 (ロゴのリンク先) %>
+    <% if user_signed_in? %>
+      <%= link_to "Rails Blog App", dashboard_path, class: "navbar-brand" %>
+    <% else %>
+      <%= link_to "Rails Blog App", root_path, class: "navbar-brand" %>
+    <% end %>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <%# 5.2. ヘッダー（ログイン後） %>
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%# 4.7 記事一覧ページへのリンク %>
+            <%= link_to "記事一覧", posts_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              ユーザー
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <li><%= link_to "プロフィール", current_user, class: "dropdown-item" %></li> <%# 4.11 (current_user は /users/:id へリンク) %>
+              <li><%= link_to "設定", edit_user_registration_path, class: "dropdown-item" %></li> <%# 4.14 %>
+              <li><hr class="dropdown-divider"></li>
+              <li>
+                <%# 5.2 ログアウト機能 %>
+                <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+              </li>
+            </ul>
+          </li>
+        <%# 5.1. ヘッダー（未ログイン時） %>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "記事一覧", posts_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "ログイン", new_user_session_path, class: "nav-link" %> <%# 4.3 %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "新規登録", new_user_registration_path, class: "nav-link" %> <%# 4.2 %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
