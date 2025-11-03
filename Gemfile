@@ -59,6 +59,12 @@ group :development, :test do
 
   # Letter opener for previewing emails in the browser [https://github.com/heartcombo/letter_opener_web]
   gem "letter_opener_web"
+
+  # Guard for automating tasks [https://github.com/guard/guard]
+  gem "guard", require: false
+
+  # Guard for minitest [https://github.com/guard/guard-minitest]
+  gem "guard-minitest", require: false
 end
 
 group :development do
@@ -70,4 +76,5 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+  gem "minitest-reporters"
 end
