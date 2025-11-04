@@ -7,11 +7,10 @@ Rails.application.routes.draw do
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
 
-  # 4.2. 静的ページ
-  root "static_pages#home"
-
-  # 4.6. ダッシュボード
-  get "dashboard", to: "dashboard#show"
+  # 4.2. 静的ページ・ダッシュボード
+  # (T-06 でコントローラー作成時に有効化)
+  # root "static_pages#home" # (今はコメントアウト)
+  # get "dashboard", to: "dashboard#show" # (今はコメントアウト)
 
   # 4.3.1. データ表示・フォロー関連ルート (users)
   resources :users, only: [ :show ] do
